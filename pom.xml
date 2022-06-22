@@ -13,7 +13,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.ouputEncoding>UTF-8</project.build.ouputEncoding>
+    <project.reporting.ouputEncoding>UTF-8</project.reporting.ouputEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
