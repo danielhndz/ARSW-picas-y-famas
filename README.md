@@ -26,13 +26,23 @@ El proyecto es una implementación del famoso juego de picas y famas. Las reglas
 
 Se puede notar que el server puede manejar sesiones de juego independientes:
 
+Primero se ingresan valores distintos:
+
 ![](../media/1.png?raw=true)
+
+Debido a eso cada un browser tiene 8 intentos y el otro 10:
 
 ![](../media/2.png?raw=true)
 
+Cada browser maneja su información independiente:
+
 ![](../media/3.png?raw=true)
 
+Ingresando el número aleatorio:
+
 ![](../media/4.png?raw=true)
+
+Pantalla final:
 
 ![](../media/5.png?raw=true)
 
