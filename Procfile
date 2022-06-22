@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/picas-y-famas-1.0-SNAPSHOT.App.jar
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/picas-y-famas.jar
