@@ -48,6 +48,13 @@
               <goal>build-info</goal>
             </goals>
             <configuration>
+              <archive>
+                <manifest>
+                  <!-- <addClasspath>true</addClasspath> -->
+                  <!-- <classpathPrefix>lib/</classpathPrefix> -->
+                  <mainClass>edu.escuelaing.arsw.labs.picasyfamas.App</mainClass>
+                </manifest>
+              </archive>
               <additionalProperties>
                 <encoding.source>${project.build.sourceEncoding}</encoding.source>
                 <java.source>${maven.compiler.source}</java.source>
