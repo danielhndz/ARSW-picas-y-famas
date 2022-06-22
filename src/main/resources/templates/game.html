@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div>
+      <form th:action="@{/game}" th:object="${service}" method="get">
+        <div th:if="${finish}">
+          <p>Felicidades, ganaste!</p>
+          <p th:text="'El número a adivinar era : ' + *{goal}"></p>
+        </div>
+        <p th:text="'Picas: ' + *{p}"></p>
+        <p th:text="'Famas: ' + *{f}"></p>
+        <div th:if="${!finish}">
+          <input name="attempt" type="number" />
+          <input type="submit" value="Jugar!" />
+        </div>
+        <p th:text="'Intentos restantes : '+ *{attempts}"></p>
+        <p th:text="'Número digitado: '+ *{current}"></p>
+      </form>
+    </div>
+    <form th:action="@{/wingame}" method="get">
+      <div th:if="${finish}">
+        <input type="submit" value="Reset" />
+      </div>
+    </form>
+  </body>
+</html>

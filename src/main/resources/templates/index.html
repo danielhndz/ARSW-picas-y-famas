@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <div>
+      <h1>Picas y famas</h1>
+      <p>
+        El objetivo del juego es adivinar un número. <br />
+        Una pica significa que un dígito se encuentra en el número en la
+        posición incorrecta. <br />
+        Una fama significa que un dígito se encuentra en el número en la
+        posición correcta. <br />
+      </p>
+      <form th:action="@{/togame}" method="get">
+        <p>¿Cuánto dígitos debe tener el número a adivinar?</p>
+        <input type="number" name="digits" min="4" max="9" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
