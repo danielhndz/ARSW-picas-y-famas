@@ -1,18 +1,21 @@
 package edu.escuelaing.arsw.labs.picasyfamas.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.annotation.SessionScope;
 
-import edu.escuelaing.arsw.labs.picasyfamas.service.Service;
+import edu.escuelaing.arsw.labs.picasyfamas.service.Game;
 
-@SessionScope
 @Controller
+@SessionScope
 public class AppController {
 
-    private Service service;
+    private Game game;
+    private final Logger logger = LoggerFactory.getLogger(AppController.class);
 
     @GetMapping("/")
     public String index() {
@@ -21,22 +24,26 @@ public class AppController {
 
     @GetMapping("/togame")
     public String toGame(@RequestParam("digits") int digits, Model model) {
-        service = new Service(digits);
-        model.addAttribute(service(), service);
-        model.addAttribute("finish", !service.getRun());
+        game = new Game(digits);
+        model.addAttribute(service(), game);
+        model.addAttribute("finish", !game.getRun());
         return "redirect:game";
     }
 
+    @SuppressWarnings("java:S2629") // sonarlint by logger.info(game.toString())
     @GetMapping("/game")
     public String getGame(
             @RequestParam(name = "attempt", required = false) Integer attempt,
             Model model) {
-        if (service != null && attempt != null) {
-            service.setCurrent(attempt);
-            service.play();
+        if (game != null && attempt != null) {
+            game.setCurrent(attempt);
+            game.play();
+        } else if (game == null) {
+            return "redirect:index";
         }
-        model.addAttribute(service(), service);
-        model.addAttribute("finish", !service.getRun());
+        model.addAttribute(service(), game);
+        model.addAttribute("finish", !game.getRun());
+        logger.info(game.toString());
         return "game";
     }
 
@@ -46,6 +53,6 @@ public class AppController {
     }
 
     private String service() {
-        return Service.class.getSimpleName().toLowerCase();
+        return Game.class.getSimpleName().toLowerCase();
     }
 }

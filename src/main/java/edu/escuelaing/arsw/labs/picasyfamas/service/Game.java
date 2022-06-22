@@ -1,6 +1,6 @@
 package edu.escuelaing.arsw.labs.picasyfamas.service;
 
-public class Service {
+public class Game {
 
     private int p;
     private int f;
@@ -10,7 +10,7 @@ public class Service {
     private Integer digits;
     private boolean run;
 
-    public Service(Integer digits) {
+    public Game(Integer digits) {
         if (digits != null) {
             this.digits = digits;
             generateRandomNum();

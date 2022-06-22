@@ -22,7 +22,11 @@ El proyecto es una implementación del famoso juego de picas y famas. Las reglas
 
 **Nota:** El servidor es **concurrente**.
 
-![]()
+Se puede notar que el server puede manejar sesiones de juego independientes:
+
+![](../media/1.png?raw=true)
+
+![](../media/2.png?raw=true)
 
 ## Getting Started
 
@@ -70,7 +74,7 @@ mvn exec:java -Dexec.mainClass="edu.escuelaing.arsw.labs.picasyfamas.App"
 
 Se sigue el patrón MVC, donde [AppControler](/src/main/java/edu/escuelaing/arsw/labs/picasyfamas/controller/AppController.java) es el controlador de las peticiones HTTP, se crea una instancia de esta clase por cada sesión HTTP que se conecta al servidor, esto garantiza la concurrencia. [Service](/src/main/java/edu/escuelaing/arsw/labs/picasyfamas/service/Service.java) maneja toda la lógica del juego como tal.
 
-![](../media/class_diagram.png)
+![](../media/class_diagram.png?raw=true)
 
 ## Authors
 

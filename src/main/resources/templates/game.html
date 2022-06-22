@@ -8,7 +8,7 @@
   </head>
   <body>
     <div>
-      <form th:action="@{/game}" th:object="${service}" method="get">
+      <form th:action="@{/game}" th:object="${game}" method="get">
         <div th:if="${finish}">
           <p>Felicidades, ganaste!</p>
           <p th:text="'El número a adivinar era : ' + *{goal}"></p>
