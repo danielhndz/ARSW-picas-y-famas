@@ -55,4 +55,5 @@ public class AppController {
     private String service() {
         return Game.class.getSimpleName().toLowerCase();
     }
+
 }

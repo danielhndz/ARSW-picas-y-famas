@@ -8,6 +8,8 @@
 
 # :hammer_and_wrench: Picas y famas
 
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://powerful-ocean-36245.herokuapp.com/)
+
 El proyecto es una implementación del famoso juego de picas y famas. Las reglas son:
 
 - El usuario ingresará un numero de `n` digitos. `n` es ingresado por el usuario también.
@@ -27,6 +29,12 @@ Se puede notar que el server puede manejar sesiones de juego independientes:
 ![](../media/1.png?raw=true)
 
 ![](../media/2.png?raw=true)
+
+![](../media/3.png?raw=true)
+
+![](../media/4.png?raw=true)
+
+![](../media/5.png?raw=true)
 
 ## Getting Started
 
